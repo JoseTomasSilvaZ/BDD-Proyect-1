@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import App from '../App'
+import About from '../Pages/About'
 import CreateToken from '../Pages/CreateToken'
 import Home from '../Pages/Home'
 import Login from '../Pages/Login'
@@ -19,6 +20,7 @@ const Router = () => {
             <Route path='/estadisticas' element={<Statistics/>}/>
             <Route path='/profile/:id' element={<Profile/>}/>
             <Route path='/create' element={<CreateToken/>}/>
+            <Route path='/about' element={<About/>}/>
         </Route>
         <Route element={<LoginLayout/>} path='login'>
             <Route path='/login' element={<Login/>}/>

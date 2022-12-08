@@ -12,9 +12,10 @@ const Token = () => {
     const [loading, setLoading] = useState(true)
     const [tokenData, setTokenData] = useState()
     const fetchTokenData  = async (id) => {
+        console.log(id, 'resultadoID')
         const data = await fetch(`http://localhost:5000/api/tokens/${id}`)
         const result = await data.json()
-        console.log(result, 'resultadoEnToken')
+        console.log(result[0], 'resultadoEnToken')
         setTokenData(result[0])
         setLoading(false)
     }
@@ -29,7 +30,7 @@ const Token = () => {
         <BarLoader color='#37d7b7'/>
         </div>
         }
-   {!loading && (
+   {(!loading && tokenData) && (
 
     <div className='flex flex-col w-full h-full gap-10 relative'>
         <div className='first--section flex '>

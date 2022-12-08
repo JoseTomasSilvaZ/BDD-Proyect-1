@@ -9,7 +9,7 @@ const TokenCurrentInformation = ({tokenData}) => {
             </div>
             <div className='ml-3'>
                 <p className='text-xs'>Creador</p>
-                <h1 className='font-bold text-white text-start'>{tokenData.created_by}</h1>
+                <h1 className='font-bold text-white text-start'>{tokenData.creator_name}</h1>
             </div>
         </div>
 
@@ -19,7 +19,7 @@ const TokenCurrentInformation = ({tokenData}) => {
             </div>
             <div className='ml-3'>
                 <p className='text-xs'>Dueño actual</p>
-                <h1 className='font-bold text-white text-start'>{tokenData.created_by}</h1>
+                <h1 className='font-bold text-white text-start'>{tokenData.owner_name}</h1>
             </div>
         </div>
     </div>

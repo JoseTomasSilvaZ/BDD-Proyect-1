@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { UserContext } from '../../Context/Context'
 
 const TableRow = ({token}) => {
+  const {userData} = useContext(UserContext)
   return (
     <tr>
         
@@ -22,7 +24,7 @@ const TableRow = ({token}) => {
     </td>
     <td>{token.owner_name}</td>
     <th>
-      <Link className='btn btn-primary btn-xs' to={`/token/${token.id}`}>Buy token🍌</Link>
+      <Link className='btn btn-primary btn-xs' to={userData.isLogged ? `/token/${token.id}`: '/login'}>Buy token🍌</Link>
     </th>
   </tr>
   )

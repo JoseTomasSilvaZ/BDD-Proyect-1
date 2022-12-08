@@ -1,7 +1,7 @@
 import React from 'react'
 import { Heart, Share } from 'react-feather'
 
-const BuyIcons = () => {
+const BuyIcons = ({tokenData}) => {
   return (
     <div className='flex justify-between'>
         <div>

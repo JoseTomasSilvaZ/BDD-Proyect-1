@@ -8,7 +8,7 @@ const TokenRow = (id) => {
     const fetchUserTokens = async(id) => {
         setLoading(true)
         console.log(id, 'id used')
-        const data = await fetch(`http://localhost:5000/api/tokens/user/    ${id}`)
+        const data = await fetch(`http://localhost:5000/api/tokens/user/${id}`)
         const result = await data.json()
         console.log(result, 'data')
         setTokens(result)
@@ -19,8 +19,8 @@ const TokenRow = (id) => {
     }, [id])
   return (
   <>
-  <div className='flex flex-row gap-2'>
-
+  <div className='flex flex-row gap-4 flex-wrap '>
+    {loading && <progress className='progress w-56'/>}
   {(!loading && !tokens.message)&& (
       
       tokens.map((token) => {

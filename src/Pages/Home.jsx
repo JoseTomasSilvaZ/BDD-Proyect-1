@@ -11,7 +11,7 @@ const Home = () => {
 
             const data = await fetch('http://localhost:5000/api/tokens')
             const result = await data.json()
-            console.log(data)
+            console.log(result, 'dataonHome')
             setTokens(result)
             setLoading(false)
         }

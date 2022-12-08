@@ -16,14 +16,14 @@ const BuyTokenCard = ({tokenData}) => {
                      
            </div>
            <div>
-                <h1 className='font-bold text-white text-xl'>{tokenData.token_name} #{tokenData.id}</h1>
+                <h1 className='font-bold text-white text-xl'>{tokenData.name} #{tokenData.id}</h1>
            </div>
            <div>
                <TokenCurrentInformation tokenData={tokenData}/>
                 <div className='divider'/>
            </div>
            <div>
-               <BuyIcons/>
+               <BuyIcons tokenData={tokenData}/>
            </div>
            <div>
                <BuyAction tokenData={tokenData}/>

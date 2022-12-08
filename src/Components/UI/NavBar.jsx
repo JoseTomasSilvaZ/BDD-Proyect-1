@@ -16,12 +16,15 @@ const NavBar = () => {
             <Link to='/'><span className='text-sm font-bold hover:text-white'>Explorar</span></Link>
              <Link to={userData.isLogged ? '/create' : '/login'}><span className='text-sm font-bold hover:text-white'>Vender</span></Link>
             <Link to='/estadisticas'><span className='text-sm font-bold hover:text-white'>Estadisticas</span></Link>
+            <Link to='/about'><span className='text-sm font-bold hover:text-white'>Sobre el proyecto</span></Link>
 
             
         </div>
         <div className='flex w-full justify-end'>
             {!userData.isLogged && <Link className='btn btn-md' to='/login'>Inicia sesion</Link>}
+
             {userData.isLogged && <Link to={`/profile/${userData.id}`}><span className='text-sm font-bold hover:text-white' >{userData.name}</span></Link>}
+            {userData.isLogged && <span className='text-sm font-bold hover:text-whit  e mx-4 btn' >{userData.amount} 🍌</span>}
         </div>
 </div>
   )

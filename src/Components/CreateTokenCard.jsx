@@ -10,8 +10,9 @@ const CreateTokenCard = () => {
     const {userData} = useContext(UserContext)
     const [loading, setLoading] = useState(false)
     const onSubmit = async (data) => {
+        setLoading(true)
         const req = await fetch(`http://localhost:5000/api/tokens/`, {
-            method:'PUT',
+            method:'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -20,12 +21,14 @@ const CreateTokenCard = () => {
                 url:data.url,
                 price:data.price,
                 onsale:data.onsale,
+                description:data.description,
                 ownerId:userData.id
 
             })
         })
         const response = await req.json()
         console.log(response)
+        return  setLoading(false)
     }
    
   return (
@@ -46,7 +49,7 @@ const CreateTokenCard = () => {
 
                 </select>
 
-           <button className='btn btn-primary'>Crear token</button>
+           <button className={`btn btn-primary ${loading ? 'loading':''}`}>Crear token</button>
             </form>
         </div>
        

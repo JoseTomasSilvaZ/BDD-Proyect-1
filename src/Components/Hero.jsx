@@ -1,5 +1,6 @@
 import React from 'react'
 import Carroussel from './Carroussel'
+import { Link } from 'react-router-dom'
 
 const Hero = ({tokens}) => {
   return (
@@ -16,7 +17,7 @@ const Hero = ({tokens}) => {
             </p>
             <div className='mt-3 flex sm:flex-col md:flex-row gap-4'>
                 <button className='btn btn-primary '>Explorar tokens</button>
-                <button className='btn'>Conocer mas</button>
+                <Link className='btn' to='/about'>Conocer mas</Link>
 
             </div>
         </div>

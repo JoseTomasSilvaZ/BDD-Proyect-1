@@ -20,8 +20,11 @@ const LoginForm = () => {
     })
     const response = await rawResponse.json()
     console.log(response)
+    const favoritesReq = await fetch(`http://localhost:5000/api/favorites/${response[0].id}`)
+    const result = await favoritesReq.json()
+    
     if(!response.error) {
-      await setUserData(({isLogged:true, ...response[0]}))
+      await setUserData(({isLogged:true, ...response[0], favorites:result}))
       return navigate('/')
     }
     return setError(true)
