@@ -5,8 +5,7 @@ import { UserContext } from '../../Context/Context'
 const LikeButton = ({token}) => {
     const {userData, setUserData} = useContext(UserContext)
     const [loading, setLoading] = useState(false)
-    console.log(userData.favorites.some(fav => fav.token_id == token.id) )
-    console.log(userData.favorites)
+   
     console.log(token.id, 'tokenid')
     const onLikeClick = async() => {
         setLoading(true)

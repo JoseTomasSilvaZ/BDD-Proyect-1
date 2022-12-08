@@ -20,21 +20,7 @@ const CardDropdown = ({token}) => {
       setLoading(false)
       setSuccess(true)
     }
-    /* 
-    
-    <div className="dropdown dropdown-right relative">
-<div className='btn rounded-md absolute top-0 right-0 ' tabIndex={0}>
 
-<MoreVertical  size={15} color='white'/>
-</div>
-<ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 text-sm inline">
-<li><a onClick = {() => onDeleteClick(token.id)}><Check size={10} color='white' className={(!loading && success) ? '': 'hidden'}/>Eliminar token</a></li>
-<li><a>Editar token</a></li>
-</ul>
-</div>
-      
-    
-    */
   return (
     <>
     {(token && (userData.id == token.owner_id))&& (

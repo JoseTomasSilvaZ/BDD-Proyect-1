@@ -4,11 +4,20 @@ import NotOnSale from './UI/NotOnSale'
 import OnSale from './UI/OnSale'
 import TokenCard from './UI/TokenCard'
 import { UserContext } from '../Context/Context'
-
+import { toast, ToastContainer } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 const CreateTokenCard = () => {
     const {register, watch, formState:{errors}, handleSubmit} = useForm()
     const {userData} = useContext(UserContext)
     const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
+    const notify =( )=> {
+        toast('Token creado con exito!', {
+            position: toast.POSITION.TOP_RIGHT,
+            hideProgressBar:true,
+            theme:'dark'
+        })
+    }
     const onSubmit = async (data) => {
         setLoading(true)
         const req = await fetch(`http://localhost:5000/api/tokens/`, {
@@ -27,11 +36,14 @@ const CreateTokenCard = () => {
             })
         })
         const response = await req.json()
-        console.log(response)
+        console.log(response, 'async')
+        notify()
+        navigate(`/token/${response[0].id}`)
         return  setLoading(false)
     }
    
   return (
+    <>
     <div className='w-full h-auto bg-base-300 rounded-xl flex p-5 '>
         <div className='w-2/3 flex flex-col items-start justify-center '>
             <h1 className='font-bold text-white text-xl mb-3'>Informacion del token</h1>
@@ -59,6 +71,7 @@ const CreateTokenCard = () => {
         </div>
         
     </div>
+    </>
   )
 }
 

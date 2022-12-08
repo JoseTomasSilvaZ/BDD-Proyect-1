@@ -14,7 +14,7 @@ const TokenCard = ({token}) => {
  <img src={token.url} className='object-cover w-full h-2/3 overflow-hidden rounded-t-md bg-success'/>
   <div className="mt-2 ">
     <div className='flex justify-between items-center'>
-    <h2 className="text-md font-bold text-white">{token.token_name}</h2>
+    <h2 className="text-md font-bold text-white">{token.token_name || token.name}</h2>
     <LikeButton token={token}/>
     </div>
     <p className='text-sm'>{token.description}</p>

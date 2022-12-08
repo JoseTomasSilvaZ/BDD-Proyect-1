@@ -1,11 +1,16 @@
 import React from 'react'
 
 const Carroussel = ({tokens}) => {
+  const randomTokens = () => {
+    const array = Array.from({length:4}, () => Math.floor(Math.random() * tokens.length))
+    const newArray = array.map(number => tokens[number])
+    return newArray
+  }
   return (
    <>
        <div className="carousel w-full">
    {
-    tokens.slice(0,4).map((token, index) => {
+    randomTokens().map((token, index) => {
         return (
             
   <div id={`item${index+1}`}  key={token.token_name} className="carousel-item w-full">

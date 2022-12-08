@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import Hero from './Components/Hero'
 import Table from './Components/Table'
+import { ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
 

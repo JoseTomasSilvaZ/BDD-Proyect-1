@@ -1,9 +1,17 @@
 import React, {useContext} from 'react'
 import { UserContext } from '../../Context/Context'
+import {toast} from 'react-toastify'
 
 const Modal = ({tokenData}) => {
   console.log(tokenData, 'tkmodal')
   const {userData, setUserData} = useContext(UserContext)
+  const notify =( )=> {
+    toast('🦧✨ Compra hecha con exito, encuentra tu nuevo Token en tu perfil!', {
+        position: toast.POSITION.TOP_RIGHT,
+        hideProgressBar:true,
+        theme:'dark'
+    })
+}
   console.log(userData)
   const createSale = async() => {
     const req = await fetch('http://localhost:5000/api/sales', {
@@ -22,6 +30,11 @@ const Modal = ({tokenData}) => {
     )
     })
     const response = await req.json()
+
+    const reqUser = await  fetch(`http://localhost:5000/api/users/${userData.id}`)
+    const resUser = await reqUser.json()
+    setUserData(prevData => ({...prevData, amount:resUser[0].amount}))
+    notify()
     console.log(response)
   }
   return (

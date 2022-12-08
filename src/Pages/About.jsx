@@ -133,6 +133,32 @@ const About = () => {
                         </div>
                     
                     </div>
+
+                    <div className='w-full'>
+                    <h1 className='text-md font-bold text-white my-3'> Obtener ventas por usuario</h1>
+
+                        <div className="mockup-code">
+                    <pre data-prefix="$">
+                        <code>
+                        SELECT sales.id, buyer.name as buyer_name, seller.name as seller_name, tokens.name as token_name, tokens.id as token_id, sales.price,                        </code></pre>
+                        <pre data-prefix='$'>
+
+                        <code>
+                        sales.transaction_date FROM sales JOIN users AS buyer ON sales.buyer_id = buyer.id INNER JOIN
+                                               </code>
+                        </pre>
+
+                        <pre data-prefix='$'>
+
+                        <code>
+                        users as seller ON sales.seller_id = seller.id INNER JOIN tokens ON sales.token_id = tokens.id WHERE seller.id = $1',    [id],
+                                               </code>
+                        </pre>
+
+                        
+                        </div>
+                    
+                    </div>
                     
 
 

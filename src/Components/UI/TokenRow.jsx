@@ -19,7 +19,7 @@ const TokenRow = (id) => {
     }, [id])
   return (
   <>
-  <div className='flex flex-row gap-4 flex-wrap '>
+  <div className='flex flex-row gap-4 flex-wrap  '>
     {loading && <progress className='progress w-56'/>}
   {(!loading && !tokens.message)&& (
       
