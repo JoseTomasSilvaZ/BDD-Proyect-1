@@ -24,14 +24,14 @@ const MostSoldToken = () => {
             <div>
             <img src={tokenData.url} className='w-[250px] h-[250px] object-cover rounded-md'/>
             <h1 className='text-md text-white font-bold mt-2 '>{tokenData.name}</h1>
-            <p className='text-sm'>🔥 {tokenData.sales_count} veces vendido</p>
+            <p className='text-sm'>🔥 {tokenData.count} veces vendido</p>
             </div>
         </div>
         </div>
         <div className="mockup-code h-full w-1/2">
-  <pre data-prefix="$"><code>//select most sold token </code></pre> 
-  <pre data-prefix="$" className="text-warning"><code>SELECT</code></pre> 
-  <pre data-prefix=">" className="text-success"><code>Done!</code></pre>
+  <pre data-prefix="$"><code>select * from tokens t join (select token_id,  </code></pre> 
+  <pre data-prefix="$" className=""><code>count(token_id) from sales group by token_id order by </code></pre> 
+  <pre data-prefix=">" className=""><code>count desc limit 1) as tmax on tmax.token_id = t.id;</code></pre>
 </div>
     </div>
     )}

@@ -8,7 +8,7 @@ import TokenCard from '../Components/UI/TokenCard'
 import SalesTable from '../Components/Profile/SalesTable'
 
 const Profile = () => {
-    const {userData} = useContext(UserContext)
+    const {userData, setUserData} = useContext(UserContext)
     const {id} = useParams()
     const [fetched, setFetched] = useState()
     const [loading, setLoading] = useState(true)
@@ -42,7 +42,7 @@ const Profile = () => {
                 <div className='w-full'>
                     <div className='flex  items-center gap-1'>
                 <h1 className='font-bold text-white text-2xl inline'>{fetched.name}</h1>
-                {(id == userData.id) && <ProfileModalEdit userData={fetched}/>}
+                {(id == userData.id) && <ProfileModalEdit userData={fetched} setUserData = {setUserData}/>}
                     </div>
                 
                 <small className='block'>{fetched.email}</small>

@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import App from '../App'
 import About from '../Pages/About'
 import CreateToken from '../Pages/CreateToken'
+import EditToken from '../Pages/EditToken'
 import Home from '../Pages/Home'
 import Login from '../Pages/Login'
 import Profile from '../Pages/Profile'
@@ -21,6 +22,7 @@ const Router = () => {
             <Route path='/profile/:id' element={<Profile/>}/>
             <Route path='/create' element={<CreateToken/>}/>
             <Route path='/about' element={<About/>}/>
+            <Route path='/token/edit/:id' element= {<EditToken/>}/>
         </Route>
         <Route element={<LoginLayout/>} path='login'>
             <Route path='/login' element={<Login/>}/>

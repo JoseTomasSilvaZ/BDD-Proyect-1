@@ -46,7 +46,8 @@ const CreateTokenCard = () => {
     <>
     <div className='w-full h-auto bg-base-300 rounded-xl flex p-5 '>
         <div className='w-2/3 flex flex-col items-start justify-center '>
-            <h1 className='font-bold text-white text-xl mb-3'>Informacion del token</h1>
+            <h1 className='font-bold text-white text-xl '>Crear un nuevo token</h1>
+            <small className='mb-2'>Rellena la informacion a continuacion</small>
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3 w-1/2'>
                 <input type='text' className='input input-md' placeholder='Nombre del Token' defaultValue='' {...register('token_name', {required:true})}/>
                 <input type='text' className='input input-md' placeholder='URL de la imagen' {...register('url', {required:true})}/>
