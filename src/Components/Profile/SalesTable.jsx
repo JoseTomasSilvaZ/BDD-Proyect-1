@@ -17,7 +17,11 @@ const SalesTable = ({id}) => {
     }, [id])
   return (
     <>
-    {loading && <progress className='progress w-56'></progress>}
+    {loading && (
+        <div className='w-full h-90 flex items-center justify-center'>
+        <progress className='w-64 progress progress-accent'></progress>
+    </div>
+    )}
     {
         (!loading && sales ) && (
 

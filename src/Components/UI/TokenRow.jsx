@@ -20,7 +20,9 @@ const TokenRow = (id) => {
   return (
   <>
   <div className='flex flex-row gap-4 flex-wrap  '>
-    {loading && <progress className='progress w-56'/>}
+    {loading && (<div className='w-full h-90 flex items-center justify-center'>
+            <progress className='w-64 progress progress-accent'></progress>
+        </div>)}
   {(!loading && !tokens.message)&& (
       
       tokens.map((token) => {

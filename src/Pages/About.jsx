@@ -20,7 +20,10 @@ const About = () => {
             <div className='w-full'>
 
             <h1 className='text-white font-bold text-2xl'>Modelo Entidad Relación FN3</h1>
-            <div className='w-[650px] h-60 bg-base-200 mt-3'/>
+            <div className='w-[650px] h-96 bg-base-200 mt-3'>
+
+            <iframe allowFullScreen='true' className='w-full h-full rounded-md' src="https://drawsql.app/teams/tomi-1/diagrams/token-store/embed"></iframe> 
+            </div>
             </div>
         </div>
 

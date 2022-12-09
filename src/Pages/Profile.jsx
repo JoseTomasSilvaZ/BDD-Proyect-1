@@ -33,7 +33,9 @@ const Profile = () => {
     console.log(id, 'id en profile')
   return (
     <div className='flex flex-col gap-10'>
-        
+        {loading && (<div className='w-full h-90 flex items-center justify-center'>
+            <progress className='w-64 progress progress-accent'></progress>
+        </div>)}
         {!loading && (
             <>
 
